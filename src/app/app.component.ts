@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'test2';
+  todoArray = ['task1', 'task2', 't3', 't4'];
+  doneArray = [];
+  taskStr = 't';
+
+  onClickTask(task: string) {
+    console.log('onClickTask(): task: ', task);
+    this.todoArray.splice(this.todoArray.indexOf(task), 1);
+    this.doneArray.push(task);
+  }
+
 }
